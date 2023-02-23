@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
 
         user = auth.getCurrentUser();
-        userId = user.getUid();
+//        userId = user.getUid();
 
         loginAdminBtn.setOnClickListener(new View.OnClickListener() {
             @Override
