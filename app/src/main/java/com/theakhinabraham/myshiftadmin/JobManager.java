@@ -12,8 +12,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class JobManager extends AppCompatActivity {
@@ -22,7 +26,9 @@ public class JobManager extends AppCompatActivity {
     EditText jobID;
     Button removeJob;
 
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private FirebaseAuth auth;
+    private FirebaseUser user;
+    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +38,11 @@ public class JobManager extends AppCompatActivity {
         link = findViewById(R.id.firebaseRedirection);
         jobID = findViewById(R.id.jobID);
         removeJob = findViewById(R.id.removeJob);
+
+        auth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
+
+        user = auth.getCurrentUser();
 
         String url = "https://console.firebase.google.com/u/0/project/myshiftproject/firestore/data/~2FJobs";
 
@@ -50,6 +61,17 @@ public class JobManager extends AppCompatActivity {
                 String job_id_str = jobID.getText().toString();
 
                 //TODO: REMOVE JOB FROM DATABASE
+                db.collection("Jobs").document(job_id_str).delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()){
+                            Toast.makeText(JobManager.this, "Successfully Removed", Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+                            Toast.makeText(JobManager.this, "FAILED", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
 
             }
         });

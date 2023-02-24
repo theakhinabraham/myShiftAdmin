@@ -7,7 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 public class AdminHome extends AppCompatActivity {
+
+    private FirebaseAuth auth;
+    private FirebaseUser user;
 
     Button manageStudentsBtn, manageCompaniesBtn, manageJobsBtn;
 
@@ -15,6 +22,9 @@ public class AdminHome extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_home);
+
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
 
         manageStudentsBtn = findViewById(R.id.manageStudentsBtn);
         manageCompaniesBtn = findViewById(R.id.manageCompaniesBtn);

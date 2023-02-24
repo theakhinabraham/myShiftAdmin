@@ -49,4 +49,7 @@ dependencies {
     // FirebaseUI for Cloud Storage
     implementation 'com.firebaseui:firebase-ui-storage:8.0.2'
 
+    //Firebase Admin Permission
+    implementation 'com.google.firebase:firebase-admin:9.1.1'
+
 }
