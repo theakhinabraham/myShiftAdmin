@@ -56,7 +56,6 @@ public class CompanyManager extends AppCompatActivity {
             public void onClick(View view) {
                 String company_id_str = companyID.getText().toString();
 
-                //TODO: REMOVE STUDENT FROM DATABASE
                 db.collection("Company").document(company_id_str).delete().addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
