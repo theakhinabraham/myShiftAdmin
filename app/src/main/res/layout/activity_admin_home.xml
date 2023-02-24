@@ -12,13 +12,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="120dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="121dp"
         android:text="Admin Panel"
         android:textColor="@color/black"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,37 +26,45 @@
         android:id="@+id/manageStudentsBtn"
         android:layout_width="300dp"
         android:layout_height="70dp"
-        android:layout_marginStart="52dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="56dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/gold"
         android:text="Manage Students"
         android:textColor="@color/gray"
         app:layout_constraintBottom_toTopOf="@+id/manageCompaniesBtn"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <Button
         android:id="@+id/manageCompaniesBtn"
         android:layout_width="300dp"
         android:layout_height="70dp"
-        android:layout_marginStart="52dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="56dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/gray"
         android:text="Manage Companies"
         android:textColor="@color/gold"
         app:layout_constraintBottom_toTopOf="@+id/manageJobsBtn"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/manageJobsBtn"
         android:layout_width="300dp"
         android:layout_height="70dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginBottom="116dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="56dp"
         android:backgroundTint="@color/gray"
         android:text="Manage Jobs"
         android:textColor="@color/cream"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/manageCompaniesBtn" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -64,6 +72,8 @@
         android:layout_height="246dp"
         android:layout_marginStart="41dp"
         android:layout_marginTop="4dp"
+        android:layout_marginEnd="42dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headingManage"
         app:srcCompat="@drawable/student" />
