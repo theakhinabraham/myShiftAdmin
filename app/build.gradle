@@ -26,6 +26,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    namespace 'com.theakhinabraham.myshiftadmin'
 }
 
 dependencies {
@@ -49,7 +50,7 @@ dependencies {
     // FirebaseUI for Cloud Storage
     implementation 'com.firebaseui:firebase-ui-storage:8.0.2'
 
-    //Firebase Admin Permission
-    implementation 'com.google.firebase:firebase-admin:9.1.1'
+//    //Firebase Admin Permission
+//    implementation 'com.google.firebase:firebase-admin:9.1.1'
 
 }

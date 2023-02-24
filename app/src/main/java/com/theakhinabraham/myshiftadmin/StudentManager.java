@@ -32,6 +32,7 @@ public class StudentManager extends AppCompatActivity {
     EditText studentID;
     Button removeStudent;
 
+
     private FirebaseAuth auth;
     private FirebaseUser user;
     private FirebaseFirestore db;
@@ -43,8 +44,6 @@ public class StudentManager extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
-
-        FirebaseApp.initializeApp();
 
         String url = "https://console.firebase.google.com/u/0/project/myshiftproject/firestore/data/~2FStudent";
 
@@ -61,8 +60,6 @@ public class StudentManager extends AppCompatActivity {
             }
         });
 
-
-
         removeStudent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,7 +71,7 @@ public class StudentManager extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(StudentManager.this, "Successfully Removed", Toast.LENGTH_SHORT).show();
-                                auth.deleteUser(student_id_str);
+
                         }
                         else {
                             Toast.makeText(StudentManager.this, "FAILED", Toast.LENGTH_SHORT).show();
